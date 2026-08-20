@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oraclecoon — L'oracle des 104 animaux totems, par Bengacoon</title>
+<meta name="description" content="Oraclecoon : un oracle de 104 animaux totems pour l'introspection et le bien-être. Tirages, chakras, journal, 9 langues. Sans publicité, données sur votre appareil." />
+<meta property="og:title" content="Oraclecoon — L'oracle des 104 animaux totems" />
+<meta property="og:description" content="Un jeu d'oracle original de 104 animaux totems. Tirages, chakras, journal, 9 langues." />
+<meta property="og:image" content="https://jdviallat.github.io/oraclecoon-site/assets/feature-1024x500.png" />
+<link rel="icon" href="assets/icone-512.png" />
+<style>
+  :root {
+    --night: #0e1828;
+    --night-2: #14223a;
+    --panel: rgba(255,255,255,.04);
+    --gold: #c9a24b;
+    --gold-light: #e8d9a8;
+    --sage: #9fb0c8;
+    --line: rgba(201,162,75,.22);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #e8eaf2; background: var(--night); line-height: 1.6;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,.5), transparent),
+      radial-gradient(1px 1px at 78% 12%, rgba(255,255,255,.4), transparent),
+      radial-gradient(1.5px 1.5px at 42% 30%, rgba(255,255,255,.35), transparent),
+      radial-gradient(1px 1px at 88% 62%, rgba(255,255,255,.4), transparent),
+      radial-gradient(1px 1px at 22% 72%, rgba(255,255,255,.35), transparent),
+      radial-gradient(120% 80% at 75% 0%, #1c2b47 0%, #12203a 45%, #0b1526 100%);
+    background-attachment: fixed;
+  }
+  .serif { font-family: Georgia, "Times New Roman", serif; }
+  h2 { font-family: Georgia, serif; color: var(--gold-light); font-size: clamp(26px, 4vw, 38px); text-align: center; letter-spacing: 1px; }
+  .sub { color: var(--sage); text-align: center; margin: 8px auto 0; max-width: 560px; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  a { color: inherit; text-decoration: none; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 20; backdrop-filter: blur(10px);
+    background: rgba(11,21,38,.72); border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; align-items: center; gap: 14px; height: 62px; }
+  nav img { width: 34px; height: 34px; border-radius: 9px; }
+  nav .brand { font-family: Georgia, serif; color: var(--gold-light); font-size: 18px; letter-spacing: 2px; }
+  nav .brand small { display: block; font-size: 10px; letter-spacing: 3px; color: var(--sage); text-transform: uppercase; }
+  nav .links { margin-left: auto; display: flex; gap: 22px; font-size: 14px; color: var(--sage); }
+  nav .links a:hover { color: var(--gold-light); }
+  @media (max-width: 640px) { nav .links { display: none; } }
+
+  /* HERO */
+  header { text-align: center; padding: 64px 20px 34px; }
+  header .logo { width: 128px; height: 128px; border-radius: 30px; box-shadow: 0 10px 50px rgba(201,162,75,.28); }
+  header .par { color: var(--gold); letter-spacing: 4px; text-transform: uppercase; font-size: 12px; margin-top: 18px; }
+  header h1 { font-family: Georgia, serif; color: var(--gold-light); font-size: clamp(44px, 9vw, 76px); letter-spacing: 4px; margin: 6px 0 10px; text-shadow: 0 2px 30px rgba(201,162,75,.35); }
+  header p.tag { color: #cdd6e6; font-size: clamp(16px, 2.4vw, 20px); max-width: 620px; margin: 0 auto; font-style: italic; }
+  .cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 26px; }
+  .btn { padding: 13px 22px; border-radius: 999px; font-size: 15px; font-weight: 600; border: 1px solid var(--gold); }
+  .btn.primary { background: linear-gradient(180deg, #2a3d55, #1b2a41); color: var(--gold-light); }
+  .btn.primary:hover { background: linear-gradient(180deg, #35496a, #22344f); }
+  .btn.ghost { color: var(--sage); border-color: var(--line); }
+
+  /* SCREENS */
+  .shots { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; padding: 26px 20px 10px; }
+  .shots img { width: 190px; border-radius: 20px; border: 1px solid var(--line); box-shadow: 0 14px 40px rgba(0,0,0,.5); }
+  @media (max-width: 640px) { .shots img { width: 140px; } }
+
+  section { padding: 56px 0; }
+  section.alt { background: rgba(255,255,255,.02); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+  /* FEATURES */
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
+  @media (max-width: 820px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .grid { grid-template-columns: 1fr; } }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 22px; }
+  .card .ico { font-size: 30px; }
+  .card h3 { font-family: Georgia, serif; color: var(--gold-light); font-size: 19px; margin: 10px 0 6px; }
+  .card p { color: var(--sage); font-size: 14.5px; }
+
+  /* PREMIUM */
+  .price-box { max-width: 460px; margin: 34px auto 0; background: linear-gradient(180deg, rgba(201,162,75,.10), rgba(255,255,255,.03)); border: 1px solid var(--gold); border-radius: 20px; padding: 30px; text-align: center; }
+  .price-box .amount { font-family: Georgia, serif; color: var(--gold-light); font-size: 40px; }
+  .price-box .amount small { display: block; font-size: 14px; color: var(--sage); letter-spacing: 1px; text-transform: uppercase; }
+  .price-box ul { list-style: none; text-align: left; margin: 20px auto 0; max-width: 340px; }
+  .price-box li { padding: 7px 0 7px 30px; position: relative; color: #dfe6f2; }
+  .price-box li::before { content: "✦"; position: absolute; left: 4px; color: var(--gold); }
+  .price-box .free { color: var(--sage); font-size: 13px; margin-top: 18px; }
+
+  /* PRIVACY */
+  .privacy { text-align: center; }
+  .privacy .badges { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 26px; }
+  .privacy .badge { background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 10px 18px; color: #dfe6f2; font-size: 14px; }
+
+  footer { text-align: center; padding: 40px 20px; border-top: 1px solid var(--line); color: var(--sage); font-size: 14px; }
+  footer a { color: var(--gold-light); }
+  footer .discl { font-size: 12px; opacity: .7; margin-top: 12px; max-width: 620px; margin-left: auto; margin-right: auto; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <img src="assets/icone-512.png" alt="Oraclecoon" />
+    <div class="brand">Oraclecoon<small>par Bengacoon</small></div>
+    <div class="links">
+      <a href="#fonctions">Fonctions</a>
+      <a href="#premium">Premium</a>
+      <a href="#confidentialite">Confidentialité</a>
+      <a href="politique.html">Mentions</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <img class="logo" src="assets/icone-512.png" alt="Oraclecoon" />
+  <div class="par">par Bengacoon</div>
+  <h1>Oraclecoon</h1>
+  <p class="tag">L'oracle des 104 animaux totems : tirez une carte, écoutez le message de votre animal, et cheminez en douceur — jour après jour.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://github.com/jdviallat/oraclecoon/releases/latest">▶ Télécharger pour Android <small style="opacity:.75;font-weight:400">· v1.5.4</small></a>
+    <span class="btn ghost">Bientôt sur l'App Store</span>
+  </div>
+</header>
+
+<div class="shots">
+  <img src="assets/capture-1.png" alt="Animal du jour" loading="lazy" />
+  <img src="assets/capture-2.png" alt="Tirage en éventail" loading="lazy" />
+  <img src="assets/capture-3.png" alt="Fiche animal et chakras" loading="lazy" />
+  <img src="assets/capture-4.png" alt="Tirage à trois cartes" loading="lazy" />
+</div>
+
+<section id="fonctions">
+  <div class="wrap">
+    <h2>Ce que fait l'app</h2>
+    <p class="sub">Un oracle complet pour s'écouter, méditer et se connaître.</p>
+    <div class="grid">
+      <div class="card"><div class="ico">🐾</div><h3>104 animaux totems</h3><p>Deux oracles de 52 cartes, chacun avec une fiche détaillée : symbolique, message et guidance.</p></div>
+      <div class="card"><div class="ico">🎴</div><h3>Des tirages variés</h3><p>Tirage du jour, tirage sur une question, à deux cartes, et passé · présent · futur.</p></div>
+      <div class="card"><div class="ico">🎯</div><h3>Tirages thématiques</h3><p>Orientez votre pioche vers une intention : amour, travail, guérison, clarté, courage, renouveau.</p></div>
+      <div class="card"><div class="ico">🌈</div><h3>Correspondances chakras</h3><p>Chaque animal est relié à ses chakras, pour une lecture énergétique de votre tirage.</p></div>
+      <div class="card"><div class="ico">📖</div><h3>Journal & statistiques</h3><p>Gardez vos tirages et ressentis, suivez votre série de jours et vos animaux les plus tirés.</p></div>
+      <div class="card"><div class="ico">🔊</div><h3>Lecture à voix haute</h3><p>Écoutez les fiches (voix et vitesse réglables). Disponible en 9 langues.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="premium" class="alt">
+  <div class="wrap">
+    <h2>Premium, sans abonnement</h2>
+    <p class="sub">Un seul achat, à vie. Aucun abonnement, aucune publicité.</p>
+    <div class="price-box">
+      <div class="amount">7,90 €<small>Achat unique</small></div>
+      <ul>
+        <li>Le second oracle : 104 cartes au total</li>
+        <li>Sauvegarde des tirages dans le journal</li>
+        <li>Statistiques personnelles</li>
+        <li>Tirages à deux et trois cartes</li>
+      </ul>
+      <p class="free">La version gratuite offre déjà le premier oracle (52 cartes), le tirage du jour et le tirage sur une question.</p>
+    </div>
+  </div>
+</section>
+
+<section id="confidentialite">
+  <div class="wrap privacy">
+    <h2>Vos données, chez vous</h2>
+    <p class="sub">Rien de personnel ne quitte votre appareil.</p>
+    <div class="badges">
+      <span class="badge">🔒 Aucune publicité</span>
+      <span class="badge">🚫 Aucun traceur</span>
+      <span class="badge">📵 Fonctionne hors ligne</span>
+      <span class="badge">🙅 Sans compte</span>
+      <span class="badge">🌍 9 langues</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>Oraclecoon — par Bengacoon · Disponible en 9 langues</div>
+  <div style="margin-top:8px"><a href="politique.html">Politique de confidentialité</a> · © 2026 Bengacoon</div>
+  <p class="discl">Oraclecoon est une œuvre de bien-être symbolique destinée à l'introspection et au développement personnel. Elle ne remplace pas un avis ou un accompagnement médical, psychologique ou thérapeutique professionnel.</p>
+</footer>
+
+</body>
+</html>
