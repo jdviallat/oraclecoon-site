@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oraclecoon — Guide d'utilisation</title>
+<meta name="description" content="Guide complet d'Oraclecoon : tous les tirages, le journal, le questionnaire, les fiches animaux, la version complète et les réglages. Ce que tu peux faire et comment." />
+<link rel="icon" href="assets/icone-512.png" />
+<style>
+  :root {
+    --night: #0e1828; --panel: rgba(255,255,255,.04);
+    --gold: #c9a24b; --gold-light: #e8d9a8; --sage: #9fb0c8; --line: rgba(201,162,75,.22);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #e8eaf2; background: var(--night); line-height: 1.65;
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,.5), transparent),
+      radial-gradient(1px 1px at 78% 12%, rgba(255,255,255,.4), transparent),
+      radial-gradient(1.5px 1.5px at 42% 30%, rgba(255,255,255,.35), transparent),
+      radial-gradient(120% 80% at 75% 0%, #1c2b47 0%, #12203a 45%, #0b1526 100%);
+    background-attachment: fixed;
+  }
+  a { color: var(--gold-light); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+  nav { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(10px); background: rgba(11,21,38,.72); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; gap: 12px; height: 60px; }
+  nav img { width: 32px; height: 32px; border-radius: 9px; }
+  nav .brand { font-family: Georgia, serif; color: var(--gold-light); font-size: 17px; letter-spacing: 2px; }
+  nav .back { margin-left: auto; color: var(--sage); font-size: 14px; }
+
+  header { text-align: center; padding: 54px 20px 20px; }
+  header .par { color: var(--gold); letter-spacing: 4px; text-transform: uppercase; font-size: 12px; }
+  header h1 { font-family: Georgia, serif; color: var(--gold-light); font-size: clamp(32px, 6vw, 48px); letter-spacing: 2px; margin: 8px 0; }
+  header p { color: #cdd6e6; font-style: italic; max-width: 560px; margin: 0 auto; }
+
+  /* Sommaire */
+  .toc { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px 24px; margin: 24px 0; }
+  .toc h2 { font-family: Georgia, serif; color: var(--gold-light); font-size: 18px; margin-bottom: 10px; }
+  .toc ol { list-style: none; counter-reset: t; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 24px; }
+  @media (max-width: 620px) { .toc ol { grid-template-columns: 1fr; } }
+  .toc li { counter-increment: t; color: var(--sage); font-size: 14.5px; }
+  .toc li::before { content: counter(t) ". "; color: var(--gold); }
+
+  section { margin: 34px 0; }
+  h2.sec { font-family: Georgia, serif; color: var(--gold-light); font-size: clamp(22px, 3.4vw, 28px); border-bottom: 1px solid var(--line); padding-bottom: 8px; margin-bottom: 14px; scroll-margin-top: 72px; }
+  h3 { color: var(--gold); font-size: 17px; margin: 16px 0 4px; }
+  p { color: #dbe2ee; margin: 6px 0; }
+  ul.steps { list-style: none; margin: 8px 0; }
+  ul.steps li { padding: 5px 0 5px 26px; position: relative; color: #dbe2ee; }
+  ul.steps li::before { content: "✦"; position: absolute; left: 2px; color: var(--gold); }
+  .tip { background: rgba(201,162,75,.08); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 12px 0; color: var(--sage); font-size: 14.5px; }
+  .tip b { color: var(--gold-light); }
+  .pill { display: inline-block; background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 2px 12px; font-size: 13px; color: var(--gold-light); margin: 2px 4px 2px 0; }
+
+  footer { text-align: center; padding: 40px 20px; border-top: 1px solid var(--line); color: var(--sage); font-size: 14px; margin-top: 40px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <img src="assets/icone-512.png" alt="Oraclecoon" />
+    <span class="brand">Oraclecoon</span>
+    <a class="back" href="index.html">← Accueil</a>
+  </div>
+</nav>
+
+<header>
+  <div class="par">par Bengacoon</div>
+  <h1>Guide d'utilisation</h1>
+  <p>Tout ce que tu peux faire avec Oraclecoon, et comment. Prends ce qui te parle, à ton rythme.</p>
+</header>
+
+<div class="wrap">
+
+  <div class="toc">
+    <h2>Sommaire</h2>
+    <ol>
+      <li><a href="#demarrer">Bien démarrer</a></li>
+      <li><a href="#tirages">Les tirages</a></li>
+      <li><a href="#synthese">La synthèse d'un tirage</a></li>
+      <li><a href="#journal">Le journal</a></li>
+      <li><a href="#questionnaire">Trouver mon animal</a></li>
+      <li><a href="#fiches">Les fiches animaux</a></li>
+      <li><a href="#parcours">Les parcours guidés</a></li>
+      <li><a href="#premium">La version complète</a></li>
+      <li><a href="#reglages">Les réglages</a></li>
+      <li><a href="#maj">Les mises à jour</a></li>
+    </ol>
+  </div>
+
+  <section id="demarrer">
+    <h2 class="sec">1 · Bien démarrer</h2>
+    <p>Oraclecoon est un oracle de <b>104 animaux totems</b> pour t'écouter, méditer et cheminer en douceur. Tout se passe sur ton appareil : aucune donnée n'est envoyée, aucune publicité.</p>
+    <p>La barre du bas donne accès aux 5 espaces :</p>
+    <ul class="steps">
+      <li><b>Accueil</b> — ton animal du jour et un accès rapide aux tirages.</li>
+      <li><b>Animaux</b> — la bibliothèque des 104 cartes et leurs fiches.</li>
+      <li><b>Tirage</b> — tous les tirages.</li>
+      <li><b>Parcours</b> — des cheminements guidés en plusieurs étapes.</li>
+      <li><b>Journal</b> — l'historique de tes tirages et tes statistiques.</li>
+    </ul>
+  </section>
+
+  <section id="tirages">
+    <h2 class="sec">2 · Les tirages</h2>
+    <p>Depuis l'onglet <b>Tirage</b>, fais glisser l'éventail et tire la carte du centre — ou choisis un tirage à plusieurs cartes. Tu peux poser une <b>question</b> (facultative), gardée avec le tirage.</p>
+    <h3>Le tirage du jour</h3>
+    <p>Une carte, une guidance douce pour aujourd'hui. Disponible aussi directement sur l'Accueil.</p>
+    <h3>Les intentions (tirages thématiques)</h3>
+    <p>Avant de tirer, choisis une intention pour orienter la pioche : <span class="pill">Amour</span><span class="pill">Travail</span><span class="pill">Guérison</span><span class="pill">Clarté</span><span class="pill">Courage</span><span class="pill">Renouveau</span></p>
+    <h3>Les tirages à plusieurs cartes</h3>
+    <ul class="steps">
+      <li><b>Deux cartes</b> — deux énergies qui se répondent, avec leur combinaison.</li>
+      <li><b>Trois cartes — passé · présent · futur</b> — le fil de ton cheminement.</li>
+      <li><b>En croix (5 cartes)</b> — situation, ce qui freine, ce qui aide, objectif, fondation.</li>
+      <li><b>Relationnel (3 cartes)</b> — toi, l'autre, et le lien qui vous unit.</li>
+    </ul>
+    <div class="tip">Une carte peut sortir <b>à l'endroit</b> ou <b>inversée</b> : l'inversé n'est pas « négatif », c'est une invitation à regarder l'énergie autrement, avec douceur.</div>
+  </section>
+
+  <section id="synthese">
+    <h2 class="sec">3 · La synthèse d'un tirage</h2>
+    <p>Pour chaque tirage à plusieurs cartes, Oraclecoon te propose une <b>synthèse</b> sous les cartes : le sens de <b>chaque position</b> (ce que dit chaque carte à sa place) puis une <b>lecture d'ensemble</b> qui relie le tout — par exemple, pour le passé·présent·futur, la symbolique des trois cartes réunies.</p>
+    <p>Tu n'as donc pas seulement des images : tu comprends ce que le tirage raconte.</p>
+  </section>
+
+  <section id="journal">
+    <h2 class="sec">4 · Le journal</h2>
+    <p>À la fin d'un tirage, appuie sur <b>Sauvegarder ce tirage</b>. Tu peux y associer ton <b>humeur</b> (des émotions à cocher, ou la tienne à écrire) et un <b>ressenti</b> libre.</p>
+    <ul class="steps">
+      <li><b>Rouvrir un tirage</b> — dans le Journal, appuie sur une entrée pour revoir les cartes en image, la synthèse et tes notes. Appuie sur une carte pour ouvrir sa fiche.</li>
+      <li><b>Statistiques</b> — série de jours, animaux les plus tirés, famille et chakra dominants.</li>
+      <li><b>Export PDF</b> — exporte tout ton journal en PDF pour le garder ou le partager.</li>
+      <li><b>Note libre</b> — ajoute une note du jour même sans tirage (bouton +).</li>
+    </ul>
+    <div class="tip">Tes tirages et notes restent sur ton appareil. Ils sont <b>conservés lors des mises à jour</b> de l'application.</div>
+  </section>
+
+  <section id="questionnaire">
+    <h2 class="sec">5 · Trouver mon animal</h2>
+    <p>Un court questionnaire (6 questions) te propose tes <b>animaux guides</b> du moment — un principal et des secondaires.</p>
+    <ul class="steps">
+      <li><b>Sauvegarder le résultat</b> — il est gardé dans ton journal, avec ses cartes.</li>
+      <li><b>Comparer</b> — retrouve tes questionnaires précédents pour suivre, dans le temps, l'<b>évolution de ton animal guide</b>.</li>
+    </ul>
+  </section>
+
+  <section id="fiches">
+    <h2 class="sec">6 · Les fiches animaux</h2>
+    <p>Chaque animal a une fiche détaillée : symbolique, message clé, guidance à l'endroit et inversée, correspondances de <b>chakra</b>, famille et éléments.</p>
+    <ul class="steps">
+      <li><b>Lecture à voix haute</b> — écoute la fiche, avec choix de la voix et de la vitesse.</li>
+      <li><b>Partage</b> — partage une carte en image à tes proches.</li>
+    </ul>
+  </section>
+
+  <section id="parcours">
+    <h2 class="sec">7 · Les parcours guidés</h2>
+    <p>Huit cheminements en plusieurs étapes (leçons) pour approfondir ta pratique et avancer pas à pas. Ta progression est mémorisée.</p>
+  </section>
+
+  <section id="premium">
+    <h2 class="sec">8 · La version complète</h2>
+    <p>La version complète (achat unique, à vie, sans abonnement) débloque :</p>
+    <ul class="steps">
+      <li>Le <b>second oracle</b> : 104 animaux totems au total.</li>
+      <li>La <b>sauvegarde</b> de tes tirages et le journal.</li>
+      <li>Les <b>tirages avancés</b> (deux et trois cartes, croix, relationnel).</li>
+    </ul>
+    <p>Sur Google Play, l'achat se fait dans l'application. Pour la version installée hors Play Store, l'achat se fait sur la <a href="acheter.html">page dédiée</a> (paiement sécurisé), puis tu reçois un <b>code de licence</b> à coller dans l'app — ton premium reste actif à vie, y compris après les mises à jour.</p>
+  </section>
+
+  <section id="reglages">
+    <h2 class="sec">9 · Les réglages</h2>
+    <p>Via la roue ⚙️ en haut de l'Accueil :</p>
+    <ul class="steps">
+      <li><b>Langue</b> — l'app est disponible en 9 langues.</li>
+      <li><b>Thème</b> — clair, sombre ou selon le système.</li>
+      <li><b>Taille du texte</b> — pour un meilleur confort de lecture.</li>
+      <li><b>Rappels</b> — une invitation quotidienne, adaptée à ton activité récente.</li>
+    </ul>
+  </section>
+
+  <section id="maj">
+    <h2 class="sec">10 · Les mises à jour</h2>
+    <p>Sur Google Play, les mises à jour sont automatiques. Pour la version installée depuis ce site, l'application <b>vérifie elle-même</b> s'il existe une version plus récente et te propose de l'installer.</p>
+    <div class="tip">Les mises à jour se font <b>par-dessus</b> l'app existante : une seule icône, et ta <b>licence comme ton journal sont conservés</b>. Même si tu sautes plusieurs versions, tu passes directement à la dernière.</div>
+  </section>
+
+</div>
+
+<footer>
+  Oraclecoon · par Bengacoon — <a href="index.html">Retour à l'accueil</a>
+</footer>
+
+</body>
+</html>
