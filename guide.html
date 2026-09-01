@@ -32,9 +32,10 @@
   nav img { width: 34px; height: 34px; border-radius: 9px; }
   nav .brand { font-family: Georgia, serif; color: var(--gold-light); font-size: 18px; letter-spacing: 2px; }
   nav .brand small { display: block; font-size: 10px; letter-spacing: 3px; color: var(--sage); text-transform: uppercase; }
-  nav .links { margin-left: auto; display: flex; gap: 22px; font-size: 14px; color: var(--sage); }
+  nav .links { margin-left: auto; display: flex; gap: 22px; font-size: 14px; color: var(--sage); align-items: center; }
   nav .links a:hover { color: var(--gold-light); }
-  @media (max-width: 680px) { nav .links { gap: 14px; font-size: 13px; } }
+  .lang-sel { margin-left: 18px; background: rgba(11,21,38,.9); color: var(--gold-light); border: 1px solid var(--line); border-radius: 8px; padding: 5px 8px; font-size: 13px; cursor: pointer; }
+  @media (max-width: 680px) { nav .links { gap: 12px; font-size: 13px; } .lang-sel { margin-left: 10px; } }
 
   header { text-align: center; padding: 54px 20px 20px; }
   header .par { color: var(--gold); letter-spacing: 4px; text-transform: uppercase; font-size: 12px; }
@@ -70,41 +71,43 @@
     <img src="assets/icone-512.png" alt="Oraclecoon" />
     <div class="brand">Oraclecoon<small>par Bengacoon</small></div>
     <div class="links">
-      <a href="index.html">Accueil</a>
-      <a href="index.html#fonctions">Fonctions</a>
-      <a href="index.html#premium">Premium</a>
-      <a href="guide.html">Guide</a>
-      <a href="politique.html">Confidentialité</a>
+      <a href="index.html" data-i18n="nav_accueil">Accueil</a>
+      <a href="index.html#fonctions" data-i18n="nav_fonctions">Fonctions</a>
+      <a href="index.html#premium" data-i18n="nav_premium">Premium</a>
+      <a href="guide.html" data-i18n="nav_guide">Guide</a>
+      <a href="politique.html" data-i18n="nav_confidentialite">Confidentialité</a>
+      <select id="oc-lang" class="lang-sel" aria-label="Language"></select>
     </div>
   </div>
 </nav>
 
 <header>
-  <div class="par">par Bengacoon</div>
-  <h1>Guide d'utilisation</h1>
-  <p>Tout ce que tu peux faire avec Oraclecoon, et comment. Prends ce qui te parle, à ton rythme.</p>
+  <div class="par" data-i18n="hero_par">par Bengacoon</div>
+  <h1 data-i18n="guide_title">Guide d'utilisation</h1>
+  <p data-i18n="guide_intro">Tout ce que tu peux faire avec Oraclecoon, et comment. Prends ce qui te parle, à ton rythme.</p>
 </header>
 
 <div class="wrap">
 
   <div class="toc">
-    <h2>Sommaire</h2>
+    <h2 data-i18n="toc_title">Sommaire</h2>
     <ol>
-      <li><a href="#demarrer">Bien démarrer</a></li>
-      <li><a href="#tirages">Les tirages</a></li>
-      <li><a href="#synthese">La synthèse d'un tirage</a></li>
-      <li><a href="#journal">Le journal</a></li>
-      <li><a href="#questionnaire">Trouver mon animal</a></li>
-      <li><a href="#fiches">Les fiches animaux</a></li>
-      <li><a href="#parcours">Les parcours guidés</a></li>
-      <li><a href="#premium">La version complète</a></li>
-      <li><a href="#reglages">Les réglages</a></li>
-      <li><a href="#maj">Les mises à jour</a></li>
+      <li><a href="#demarrer" data-i18n="toc1">Bien démarrer</a></li>
+      <li><a href="#tirages" data-i18n="toc2">Les tirages</a></li>
+      <li><a href="#synthese" data-i18n="toc3">La synthèse d'un tirage</a></li>
+      <li><a href="#journal" data-i18n="toc4">Le journal</a></li>
+      <li><a href="#questionnaire" data-i18n="toc5">Trouver mon animal</a></li>
+      <li><a href="#fiches" data-i18n="toc6">Les fiches animaux</a></li>
+      <li><a href="#parcours" data-i18n="toc7">Les parcours guidés</a></li>
+      <li><a href="#premium" data-i18n="toc8">La version complète</a></li>
+      <li><a href="#reglages" data-i18n="toc9">Les réglages</a></li>
+      <li><a href="#maj" data-i18n="toc10">Les mises à jour</a></li>
     </ol>
   </div>
 
   <section id="demarrer">
-    <h2 class="sec">1 · Bien démarrer</h2>
+    <h2 class="sec" data-i18n="g1_t">1 · Bien démarrer</h2>
+    <div data-i18n="g1_b">
     <p>Oraclecoon est un oracle de <b>104 animaux totems</b> pour t'écouter, méditer et cheminer en douceur. Tout se passe sur ton appareil : aucune donnée n'est envoyée, aucune publicité.</p>
     <p>La barre du bas donne accès aux 5 espaces :</p>
     <ul class="steps">
@@ -114,10 +117,12 @@
       <li><b>Parcours</b> — des cheminements guidés en plusieurs étapes.</li>
       <li><b>Journal</b> — l'historique de tes tirages et tes statistiques.</li>
     </ul>
+    </div>
   </section>
 
   <section id="tirages">
-    <h2 class="sec">2 · Les tirages</h2>
+    <h2 class="sec" data-i18n="g2_t">2 · Les tirages</h2>
+    <div data-i18n="g2_b">
     <p>Depuis l'onglet <b>Tirage</b>, fais glisser l'éventail et tire la carte du centre — ou choisis un tirage à plusieurs cartes. Tu peux poser une <b>question</b> (facultative), gardée avec le tirage.</p>
     <h3>Le tirage du jour</h3>
     <p>Une carte, une guidance douce pour aujourd'hui. Disponible aussi directement sur l'Accueil.</p>
@@ -131,16 +136,20 @@
       <li><b>Relationnel (3 cartes)</b> — toi, l'autre, et le lien qui vous unit.</li>
     </ul>
     <div class="tip">Une carte peut sortir <b>à l'endroit</b> ou <b>inversée</b> : l'inversé n'est pas « négatif », c'est une invitation à regarder l'énergie autrement, avec douceur.</div>
+    </div>
   </section>
 
   <section id="synthese">
-    <h2 class="sec">3 · La synthèse d'un tirage</h2>
+    <h2 class="sec" data-i18n="g3_t">3 · La synthèse d'un tirage</h2>
+    <div data-i18n="g3_b">
     <p>Pour chaque tirage à plusieurs cartes, Oraclecoon te propose une <b>synthèse</b> sous les cartes : le sens de <b>chaque position</b> (ce que dit chaque carte à sa place) puis une <b>lecture d'ensemble</b> qui relie le tout — par exemple, pour le passé·présent·futur, la symbolique des trois cartes réunies.</p>
     <p>Tu n'as donc pas seulement des images : tu comprends ce que le tirage raconte.</p>
+    </div>
   </section>
 
   <section id="journal">
-    <h2 class="sec">4 · Le journal</h2>
+    <h2 class="sec" data-i18n="g4_t">4 · Le journal</h2>
+    <div data-i18n="g4_b">
     <p>À la fin d'un tirage, appuie sur <b>Sauvegarder ce tirage</b>. Tu peux y associer ton <b>humeur</b> (des émotions à cocher, ou la tienne à écrire) et un <b>ressenti</b> libre.</p>
     <ul class="steps">
       <li><b>Rouvrir un tirage</b> — dans le Journal, appuie sur une entrée pour revoir les cartes en image, la synthèse et tes notes. Appuie sur une carte pour ouvrir sa fiche.</li>
@@ -149,33 +158,41 @@
       <li><b>Note libre</b> — ajoute une note du jour même sans tirage (bouton +).</li>
     </ul>
     <div class="tip">Tes tirages et notes restent sur ton appareil. Ils sont <b>conservés lors des mises à jour</b> de l'application.</div>
+    </div>
   </section>
 
   <section id="questionnaire">
-    <h2 class="sec">5 · Trouver mon animal</h2>
+    <h2 class="sec" data-i18n="g5_t">5 · Trouver mon animal</h2>
+    <div data-i18n="g5_b">
     <p>Un court questionnaire (6 questions) te propose tes <b>animaux guides</b> du moment — un principal et des secondaires.</p>
     <ul class="steps">
       <li><b>Sauvegarder le résultat</b> — il est gardé dans ton journal, avec ses cartes.</li>
       <li><b>Comparer</b> — retrouve tes questionnaires précédents pour suivre, dans le temps, l'<b>évolution de ton animal guide</b>.</li>
     </ul>
+    </div>
   </section>
 
   <section id="fiches">
-    <h2 class="sec">6 · Les fiches animaux</h2>
+    <h2 class="sec" data-i18n="g6_t">6 · Les fiches animaux</h2>
+    <div data-i18n="g6_b">
     <p>Chaque animal a une fiche détaillée : symbolique, message clé, guidance à l'endroit et inversée, correspondances de <b>chakra</b>, famille et éléments.</p>
     <ul class="steps">
       <li><b>Lecture à voix haute</b> — écoute la fiche, avec choix de la voix et de la vitesse.</li>
       <li><b>Partage</b> — partage une carte en image à tes proches.</li>
     </ul>
+    </div>
   </section>
 
   <section id="parcours">
-    <h2 class="sec">7 · Les parcours guidés</h2>
+    <h2 class="sec" data-i18n="g7_t">7 · Les parcours guidés</h2>
+    <div data-i18n="g7_b">
     <p>Huit cheminements en plusieurs étapes (leçons) pour approfondir ta pratique et avancer pas à pas. Ta progression est mémorisée.</p>
+    </div>
   </section>
 
   <section id="premium">
-    <h2 class="sec">8 · La version complète</h2>
+    <h2 class="sec" data-i18n="g8_t">8 · La version complète</h2>
+    <div data-i18n="g8_b">
     <p>La version complète (achat unique, à vie, sans abonnement) débloque :</p>
     <ul class="steps">
       <li>Le <b>second oracle</b> : 104 animaux totems au total.</li>
@@ -183,10 +200,12 @@
       <li>Les <b>tirages avancés</b> (deux et trois cartes, croix, relationnel).</li>
     </ul>
     <p>Sur Google Play, l'achat se fait dans l'application. Pour la version installée hors Play Store, l'achat se fait sur la <a href="acheter.html">page dédiée</a> (paiement sécurisé), puis tu reçois un <b>code de licence</b> à coller dans l'app — ton premium reste actif à vie, y compris après les mises à jour.</p>
+    </div>
   </section>
 
   <section id="reglages">
-    <h2 class="sec">9 · Les réglages</h2>
+    <h2 class="sec" data-i18n="g9_t">9 · Les réglages</h2>
+    <div data-i18n="g9_b">
     <p>Via la roue ⚙️ en haut de l'Accueil :</p>
     <ul class="steps">
       <li><b>Langue</b> — l'app est disponible en 9 langues.</li>
@@ -194,19 +213,26 @@
       <li><b>Taille du texte</b> — pour un meilleur confort de lecture.</li>
       <li><b>Rappels</b> — une invitation quotidienne, adaptée à ton activité récente.</li>
     </ul>
+    </div>
   </section>
 
   <section id="maj">
-    <h2 class="sec">10 · Les mises à jour</h2>
+    <h2 class="sec" data-i18n="g10_t">10 · Les mises à jour</h2>
+    <div data-i18n="g10_b">
     <p>Sur Google Play, les mises à jour sont automatiques. Pour la version installée depuis ce site, l'application <b>vérifie elle-même</b> s'il existe une version plus récente et te propose de l'installer.</p>
     <div class="tip">Les mises à jour se font <b>par-dessus</b> l'app existante : une seule icône, et ta <b>licence comme ton journal sont conservés</b>. Même si tu sautes plusieurs versions, tu passes directement à la dernière.</div>
+    </div>
   </section>
 
 </div>
 
 <footer>
-  Oraclecoon · par Bengacoon — <a href="index.html">Retour à l'accueil</a>
+  <span data-i18n="guide_foot">Oraclecoon · par Bengacoon — <a href="index.html">Retour à l'accueil</a></span>
 </footer>
+
+<script src="translations.js"></script>
+<script src="translations2.js"></script>
+<script src="i18n.js"></script>
 
 </body>
 </html>

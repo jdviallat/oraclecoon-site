@@ -33,31 +33,36 @@
   .steps b { color:var(--gold-light); }
   .note { margin-top:16px; font-size:12px; color:var(--sage); opacity:.8; }
   a.back { color:var(--gold-light); font-size:14px; display:inline-block; margin-top:18px; text-decoration:none; }
+  .lang-sel { position:fixed; top:14px; right:14px; background:rgba(11,21,38,.9); color:var(--gold-light); border:1px solid var(--line); border-radius:8px; padding:5px 8px; font-size:13px; cursor:pointer; }
 </style>
 </head>
 <body>
+  <select id="oc-lang" class="lang-sel" aria-label="Language"></select>
   <div class="card">
     <img class="logo" src="assets/icone-512.png" alt="Oraclecoon" />
-    <h1>Version complète</h1>
-    <div class="price">7,90 €<small>Achat unique · à vie</small></div>
+    <h1 data-i18n="buy_h1">Version complète</h1>
+    <div class="price">7,90 €<small data-i18n="buy_once">Achat unique · à vie</small></div>
     <ul>
-      <li>Le second oracle : 104 cartes au total</li>
-      <li>Sauvegarde des tirages + statistiques</li>
-      <li>Tirages à deux et trois cartes</li>
+      <li data-i18n="buy_li1">Le second oracle : 104 cartes au total</li>
+      <li data-i18n="buy_li2">Sauvegarde des tirages + statistiques</li>
+      <li data-i18n="buy_li3">Tirages à deux et trois cartes</li>
     </ul>
 
-    <a class="btn" href="https://paypal.me/hypnocoon/7.90EUR" style="background:#0070ba;color:#fff">Payer avec PayPal · 7,90 €</a>
-    <a class="btn" href="https://pay.sumup.com/b2c/QJZVD5JC" style="background:#1b2a4a;color:#fff;margin-top:10px">Payer avec SumUp · 7,90 €</a>
+    <a class="btn" href="https://paypal.me/hypnocoon/7.90EUR" style="background:#0070ba;color:#fff" data-i18n="buy_paypal">Payer avec PayPal · 7,90 €</a>
+    <a class="btn" href="https://pay.sumup.com/b2c/QJZVD5JC" style="background:#1b2a4a;color:#fff;margin-top:10px" data-i18n="buy_sumup">Payer avec SumUp · 7,90 €</a>
 
     <div class="steps">
-      <b>Comment ça marche</b>
-      <p style="margin-top:6px">1. Tu payes en ligne (paiement sécurisé).<br>
+      <b data-i18n="buy_how_t">Comment ça marche</b>
+      <p style="margin-top:6px" data-i18n="buy_how_b">1. Tu payes en ligne (paiement sécurisé).<br>
       2. Tu reçois un <b>code de licence</b> par e-mail.<br>
       3. Dans l'app : <b>Version complète → J'ai un code</b> → tu le colles.<br>
       4. Ton premium est débloqué, à vie. 🔓</p>
     </div>
-    <p class="note">Cette page d'achat concerne la version installée hors Google Play. Sur le Play Store, l'achat se fait directement dans l'application.</p>
-    <a class="back" href="index.html">← Retour</a>
+    <p class="note" data-i18n="buy_note">Cette page d'achat concerne la version installée hors Google Play. Sur le Play Store, l'achat se fait directement dans l'application.</p>
+    <a class="back" href="index.html" data-i18n="buy_back">← Retour</a>
   </div>
+<script src="translations.js"></script>
+<script src="translations2.js"></script>
+<script src="i18n.js"></script>
 </body>
 </html>

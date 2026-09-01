@@ -22,9 +22,10 @@
   nav img { width:34px; height:34px; border-radius:9px; }
   nav .brand { font-family:Georgia,serif; color:var(--gold-light); font-size:18px; letter-spacing:2px; }
   nav .brand small { display:block; font-size:10px; letter-spacing:3px; color:var(--sage); text-transform:uppercase; }
-  nav .links { margin-left:auto; display:flex; gap:22px; font-size:14px; color:var(--sage); }
+  nav .links { margin-left:auto; display:flex; gap:22px; font-size:14px; color:var(--sage); align-items:center; }
   nav .links a:hover { color:var(--gold-light); }
-  @media (max-width:680px) { nav .links { gap:14px; font-size:13px; } }
+  .lang-sel { margin-left:18px; background:rgba(11,21,38,.9); color:var(--gold-light); border:1px solid var(--line); border-radius:8px; padding:5px 8px; font-size:13px; cursor:pointer; }
+  @media (max-width:680px) { nav .links { gap:12px; font-size:13px; } .lang-sel { margin-left:10px; } }
   main { padding:36px 0 20px; }
   h1 { font-family:Georgia,serif; color:var(--gold-light); font-size:clamp(26px,4vw,34px); margin-bottom:8px; }
   h2 { font-family:Georgia,serif; font-size:1.25rem; margin-top:2rem; color:var(--gold); }
@@ -43,25 +44,26 @@
     <img src="assets/icone-512.png" alt="Oraclecoon" />
     <div class="brand">Oraclecoon<small>par Bengacoon</small></div>
     <div class="links">
-      <a href="index.html">Accueil</a>
-      <a href="index.html#fonctions">Fonctions</a>
-      <a href="index.html#premium">Premium</a>
-      <a href="guide.html">Guide</a>
-      <a href="politique.html">Confidentialité</a>
+      <a href="index.html" data-i18n="nav_accueil">Accueil</a>
+      <a href="index.html#fonctions" data-i18n="nav_fonctions">Fonctions</a>
+      <a href="index.html#premium" data-i18n="nav_premium">Premium</a>
+      <a href="guide.html" data-i18n="nav_guide">Guide</a>
+      <a href="politique.html" data-i18n="nav_confidentialite">Confidentialité</a>
+      <select id="oc-lang" class="lang-sel" aria-label="Language"></select>
     </div>
   </div>
 </nav>
 
 <main class="wrap">
-<h1>Politique de confidentialité — Oraclecoon</h1>
-<p class="meta">
+<h1 data-i18n="pol_h1">Politique de confidentialité — Oraclecoon</h1>
+<p class="meta" data-i18n="pol_meta">
   <strong>Dernière mise à jour :</strong> 16 juillet 2026<br>
   <strong>Éditeur :</strong> Bengacoon<br>
   <strong>Application :</strong> Oraclecoon (<code>com.bengacoon.oraclecoon</code>)<br>
   <strong>Contact :</strong> jdviallat@gmail.com
 </p>
 
-<div class="resume">
+<div class="resume" data-i18n="pol_resume">
 <strong>En résumé.</strong> Oraclecoon fonctionne hors ligne et <strong>ne collecte aucune
 donnée personnelle à des fins de suivi ou de publicité</strong>. Vos tirages, notes et réglages
 restent sur votre appareil. L'application se connecte à Internet uniquement pour deux choses
@@ -69,14 +71,14 @@ optionnelles : <strong>l'achat de la version complète</strong> (via l'App Store
 et RevenueCat) et la <strong>vérification des mises à jour</strong>.
 </div>
 
-<h2>Données stockées sur votre appareil</h2>
-<p>Tout ce que vous créez dans l'application — entrées de journal, tirages enregistrés,
+<h2 data-i18n="pol_s1_t">Données stockées sur votre appareil</h2>
+<div data-i18n="pol_s1_b"><p>Tout ce que vous créez dans l'application — entrées de journal, tirages enregistrés,
 réponses au questionnaire « Trouver mon animal », animal du jour, réglages de notifications,
 langue et thème — reste <strong>exclusivement sur votre appareil</strong>. Ces données ne sont
-jamais envoyées à l'éditeur et sont supprimées si vous désinstallez l'application.</p>
+jamais envoyées à l'éditeur et sont supprimées si vous désinstallez l'application.</p></div>
 
-<h2>Achat intégré (version complète)</h2>
-<p>L'achat unique de la version complète (7,90 €) est traité par la boutique de votre
+<h2 data-i18n="pol_s2_t">Achat intégré (version complète)</h2>
+<div data-i18n="pol_s2_b"><p>L'achat unique de la version complète (7,90 €) est traité par la boutique de votre
 plateforme (<strong>App Store d'Apple</strong> ou <strong>Google Play</strong>) et géré via le
 service <strong>RevenueCat</strong>, qui vérifie et restaure votre achat. Dans ce cadre, un
 <strong>identifiant anonyme d'achat</strong> et le statut de votre licence peuvent être traités
@@ -85,50 +87,53 @@ Aucune donnée nominative (nom, e-mail, contacts) ne leur est transmise par l'ap
 <ul>
   <li>Confidentialité Apple : <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a></li>
   <li>Confidentialité RevenueCat : <a href="https://www.revenuecat.com/privacy/">revenuecat.com/privacy</a></li>
-</ul>
+</ul></div>
 
-<h2>Vérification des mises à jour</h2>
-<p>Au lancement, l'application peut interroger un petit fichier public pour savoir si une
+<h2 data-i18n="pol_s3_t">Vérification des mises à jour</h2>
+<div data-i18n="pol_s3_b"><p>Au lancement, l'application peut interroger un petit fichier public pour savoir si une
 version plus récente existe. Cette requête <strong>n'envoie aucune donnée vous concernant</strong>
-(pas d'identifiant, pas de contenu) ; elle télécharge seulement un numéro de version.</p>
+(pas d'identifiant, pas de contenu) ; elle télécharge seulement un numéro de version.</p></div>
 
-<h2>Publicité et traceurs</h2>
-<p>Oraclecoon <strong>ne contient aucune publicité, aucun traceur publicitaire et aucun outil
+<h2 data-i18n="pol_s4_t">Publicité et traceurs</h2>
+<div data-i18n="pol_s4_b"><p>Oraclecoon <strong>ne contient aucune publicité, aucun traceur publicitaire et aucun outil
 d'analyse d'audience</strong> (pas de Google Analytics, pas de SDK publicitaire, pas de pixel
-de suivi). Aucun profilage n'est réalisé.</p>
+de suivi). Aucun profilage n'est réalisé.</p></div>
 
-<h2>Permissions</h2>
-<p><strong>Notifications</strong> : utilisées uniquement, si vous les activez, pour un rappel
+<h2 data-i18n="pol_s5_t">Permissions</h2>
+<div data-i18n="pol_s5_b"><p><strong>Notifications</strong> : utilisées uniquement, si vous les activez, pour un rappel
 doux quotidien (animal du jour). Désactivables à tout moment. L'application ne demande aucun
-accès à votre localisation, vos contacts, votre caméra ou votre microphone.</p>
+accès à votre localisation, vos contacts, votre caméra ou votre microphone.</p></div>
 
-<h2>Enfants</h2>
-<p>L'application convient à un public général et ne collecte aucune donnée personnelle,
-y compris auprès des mineurs.</p>
+<h2 data-i18n="pol_s6_t">Enfants</h2>
+<div data-i18n="pol_s6_b"><p>L'application convient à un public général et ne collecte aucune donnée personnelle,
+y compris auprès des mineurs.</p></div>
 
-<h2>Vos droits</h2>
-<p>Aucune donnée personnelle n'étant collectée par l'éditeur, il n'y a rien à exporter ni à
+<h2 data-i18n="pol_s7_t">Vos droits</h2>
+<div data-i18n="pol_s7_b"><p>Aucune donnée personnelle n'étant collectée par l'éditeur, il n'y a rien à exporter ni à
 supprimer de notre côté. Vous gardez le contrôle total des contenus présents sur votre
 appareil. Pour toute question relative à un achat, contactez la boutique concernée (Apple ou
-Google) ou l'éditeur à l'adresse ci-dessous.</p>
+Google) ou l'éditeur à l'adresse ci-dessous.</p></div>
 
-<h2>Avertissement</h2>
-<p>Oraclecoon est une œuvre de bien-être symbolique destinée à l'introspection et au
+<h2 data-i18n="pol_s8_t">Avertissement</h2>
+<div data-i18n="pol_s8_b"><p>Oraclecoon est une œuvre de bien-être symbolique destinée à l'introspection et au
 développement personnel. Elle <strong>ne remplace pas</strong> un avis ou un accompagnement
-médical, psychologique ou thérapeutique professionnel.</p>
+médical, psychologique ou thérapeutique professionnel.</p></div>
 
-<h2>Contact</h2>
-<p>Pour toute question relative à cette politique de confidentialité :
-<strong>jdviallat@gmail.com</strong></p>
+<h2 data-i18n="pol_s9_t">Contact</h2>
+<div data-i18n="pol_s9_b"><p>Pour toute question relative à cette politique de confidentialité :
+<strong>jdviallat@gmail.com</strong></p></div>
 
 <hr>
-<p class="meta"><em>Cette politique pourra être mise à jour en cas d'évolution de
+<p class="meta" data-i18n="pol_updated"><em>Cette politique pourra être mise à jour en cas d'évolution de
 l'application. La date en haut de page indique la dernière révision.</em></p>
 </main>
 
 <footer>
-  Oraclecoon · par Bengacoon — <a href="index.html">Retour à l'accueil</a> · <a href="guide.html">Guide</a>
+  <span data-i18n="pol_foot">Oraclecoon · par Bengacoon — <a href="index.html">Retour à l'accueil</a> · <a href="guide.html">Guide</a></span>
 </footer>
 
+<script src="translations.js"></script>
+<script src="translations2.js"></script>
+<script src="i18n.js"></script>
 </body>
 </html>
