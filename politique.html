@@ -4,24 +4,55 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Politique de confidentialité — Oraclecoon</title>
+<link rel="icon" href="assets/icone-512.png" />
 <style>
-  :root { color-scheme: light dark; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-         line-height: 1.6; max-width: 720px; margin: 0 auto; padding: 2rem 1.2rem;
-         color: #1c2230; background: #fbfaff; }
-  @media (prefers-color-scheme: dark) { body { color: #e8eaf2; background: #10131c; } }
-  h1 { font-size: 1.6rem; }
-  h2 { font-size: 1.15rem; margin-top: 2rem; color: #6a5acd; }
-  @media (prefers-color-scheme: dark) { h2 { color: #a99bf0; } }
-  .meta { opacity: .75; font-size: .92rem; }
-  code { background: rgba(128,128,128,.15); padding: .1em .35em; border-radius: 4px; }
-  hr { border: none; border-top: 1px solid rgba(128,128,128,.25); margin: 2rem 0; }
-  .resume { background: rgba(106,90,205,.08); border-left: 3px solid #6a5acd;
-            padding: .8rem 1rem; border-radius: 6px; }
+  :root { --night:#0e1828; --panel:rgba(255,255,255,.04); --gold:#c9a24b; --gold-light:#e8d9a8; --sage:#9fb0c8; --line:rgba(201,162,75,.22); }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; line-height:1.65; color:#dbe2ee;
+    background:var(--night);
+    background-image: radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,.5), transparent), radial-gradient(1px 1px at 78% 12%, rgba(255,255,255,.4), transparent), radial-gradient(120% 80% at 75% 0%, #1c2b47 0%, #12203a 45%, #0b1526 100%);
+    background-attachment:fixed;
+  }
+  a { color:var(--gold-light); }
+  .wrap { max-width:760px; margin:0 auto; padding:0 20px; }
+  /* NAV identique aux autres pages */
+  nav { position:sticky; top:0; z-index:20; backdrop-filter:blur(10px); background:rgba(11,21,38,.72); border-bottom:1px solid var(--line); }
+  nav .wrap { display:flex; align-items:center; gap:14px; height:62px; max-width:1040px; }
+  nav img { width:34px; height:34px; border-radius:9px; }
+  nav .brand { font-family:Georgia,serif; color:var(--gold-light); font-size:18px; letter-spacing:2px; }
+  nav .brand small { display:block; font-size:10px; letter-spacing:3px; color:var(--sage); text-transform:uppercase; }
+  nav .links { margin-left:auto; display:flex; gap:22px; font-size:14px; color:var(--sage); }
+  nav .links a:hover { color:var(--gold-light); }
+  @media (max-width:680px) { nav .links { gap:14px; font-size:13px; } }
+  main { padding:36px 0 20px; }
+  h1 { font-family:Georgia,serif; color:var(--gold-light); font-size:clamp(26px,4vw,34px); margin-bottom:8px; }
+  h2 { font-family:Georgia,serif; font-size:1.25rem; margin-top:2rem; color:var(--gold); }
+  .meta { color:var(--sage); font-size:.92rem; }
+  code { background:rgba(201,162,75,.14); color:var(--gold-light); padding:.1em .35em; border-radius:4px; }
+  hr { border:none; border-top:1px solid var(--line); margin:2rem 0; }
+  ul { padding-left:1.2rem; }
+  .resume { background:rgba(201,162,75,.08); border-left:3px solid var(--gold); padding:.9rem 1.1rem; border-radius:8px; color:#e8eaf2; }
+  footer { text-align:center; padding:34px 20px; border-top:1px solid var(--line); color:var(--sage); font-size:14px; margin-top:30px; }
 </style>
 </head>
 <body>
 
+<nav>
+  <div class="wrap">
+    <img src="assets/icone-512.png" alt="Oraclecoon" />
+    <div class="brand">Oraclecoon<small>par Bengacoon</small></div>
+    <div class="links">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#fonctions">Fonctions</a>
+      <a href="index.html#premium">Premium</a>
+      <a href="guide.html">Guide</a>
+      <a href="politique.html">Confidentialité</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
 <h1>Politique de confidentialité — Oraclecoon</h1>
 <p class="meta">
   <strong>Dernière mise à jour :</strong> 16 juillet 2026<br>
@@ -93,6 +124,11 @@ médical, psychologique ou thérapeutique professionnel.</p>
 <hr>
 <p class="meta"><em>Cette politique pourra être mise à jour en cas d'évolution de
 l'application. La date en haut de page indique la dernière révision.</em></p>
+</main>
+
+<footer>
+  Oraclecoon · par Bengacoon — <a href="index.html">Retour à l'accueil</a> · <a href="guide.html">Guide</a>
+</footer>
 
 </body>
 </html>

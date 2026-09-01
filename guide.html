@@ -28,10 +28,13 @@
   .wrap { max-width: 900px; margin: 0 auto; padding: 0 20px; }
 
   nav { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(10px); background: rgba(11,21,38,.72); border-bottom: 1px solid var(--line); }
-  nav .wrap { display: flex; align-items: center; gap: 12px; height: 60px; }
-  nav img { width: 32px; height: 32px; border-radius: 9px; }
-  nav .brand { font-family: Georgia, serif; color: var(--gold-light); font-size: 17px; letter-spacing: 2px; }
-  nav .back { margin-left: auto; color: var(--sage); font-size: 14px; }
+  nav .wrap { display: flex; align-items: center; gap: 14px; height: 62px; }
+  nav img { width: 34px; height: 34px; border-radius: 9px; }
+  nav .brand { font-family: Georgia, serif; color: var(--gold-light); font-size: 18px; letter-spacing: 2px; }
+  nav .brand small { display: block; font-size: 10px; letter-spacing: 3px; color: var(--sage); text-transform: uppercase; }
+  nav .links { margin-left: auto; display: flex; gap: 22px; font-size: 14px; color: var(--sage); }
+  nav .links a:hover { color: var(--gold-light); }
+  @media (max-width: 680px) { nav .links { gap: 14px; font-size: 13px; } }
 
   header { text-align: center; padding: 54px 20px 20px; }
   header .par { color: var(--gold); letter-spacing: 4px; text-transform: uppercase; font-size: 12px; }
@@ -65,8 +68,14 @@
 <nav>
   <div class="wrap">
     <img src="assets/icone-512.png" alt="Oraclecoon" />
-    <span class="brand">Oraclecoon</span>
-    <a class="back" href="index.html">← Accueil</a>
+    <div class="brand">Oraclecoon<small>par Bengacoon</small></div>
+    <div class="links">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#fonctions">Fonctions</a>
+      <a href="index.html#premium">Premium</a>
+      <a href="guide.html">Guide</a>
+      <a href="politique.html">Confidentialité</a>
+    </div>
   </div>
 </nav>
 
