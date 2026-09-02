@@ -47,7 +47,7 @@ Oraclecoon est une œuvre de bien-être symbolique destinée à l'introspection 
 ## Contact
 
 Pour toute question relative à cette politique de confidentialité :
-**jdviallat@gmail.com**
+**bengacoon74@gmail.com**
 
 ---
 
